@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - AadharPe EMI Loan Calculator</title>
+
+<style>
+:root{
+    --bg:#f1f5fb;
+    --card:#ffffff;
+    --text:#2b3648;
+    --muted:#6b7788;
+    --blue:#1565C0;
+    --blue-dark:#0d47a1;
+    --tint:#eef4fd;
+    --border:#dbe5f3;
+    color-scheme:light;
+}
+@media(prefers-color-scheme:dark){
+    :root{
+        --bg:#0e1522;
+        --card:#16202f;
+        --text:#dbe4f2;
+        --muted:#92a1b8;
+        --blue:#6aa8f5;
+        --blue-dark:#0d47a1;
+        --tint:#1b2a40;
+        --border:#26364e;
+        color-scheme:dark;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+    font-family:"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.75;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:var(--card);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(13,71,161,.14);
+}
+
+/* Header */
+.header{
+    background:linear-gradient(120deg,#0d47a1 0%,#1565C0 55%,#1e88e5 100%);
+    color:#fff;
+    padding:44px 44px 40px;
+}
+.header .app{
+    font-size:15px;
+    opacity:.85;
+    margin-bottom:6px;
+}
+.header h1{
+    font-size:38px;
+    line-height:1.15;
+    margin-bottom:10px;
+}
+.header p{
+    margin:0;
+    max-width:560px;
+    opacity:.92;
+}
+
+/* Quick points */
+.pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:20px 44px;
+    background:var(--tint);
+    border-bottom:1px solid var(--border);
+}
+.pill{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:6px 16px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.content{
+    padding:14px 44px 36px;
+}
+
+h2{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:38px;
+    margin-bottom:10px;
+    color:var(--blue);
+    font-size:21px;
+}
+h2 .ic{
+    flex:none;
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    background:var(--tint);
+    border:1px solid var(--border);
+    display:grid;
+    place-items:center;
+    font-size:18px;
+}
+
+p{margin:12px 0}
+
+ul{
+    margin:10px 0 10px 30px;
+}
+li{margin:8px 0}
+li::marker{color:var(--blue)}
+
+a{
+    color:var(--blue);
+    text-decoration:none;
+}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{
+    outline:3px solid #90caf9;
+    outline-offset:2px;
+    border-radius:4px;
+}
+
+/* Third-party links as buttons */
+.links{
+    list-style:none;
+    margin:14px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+}
+.links li{margin:0}
+.links a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--tint);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 16px;
+    font-weight:600;
+}
+.links a::after{content:"↗";opacity:.7}
+.links a:hover{
+    text-decoration:none;
+    border-color:var(--blue);
+}
+
+/* Log data chips */
+.chips{
+    list-style:none;
+    margin:14px 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.chips li{
+    margin:0;
+    background:var(--tint);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:5px 14px;
+    font-size:15px;
+}
+
+/* Notice boxes */
+.note{
+    background:var(--tint);
+    border-left:4px solid var(--blue);
+    border-radius:0 10px 10px 0;
+    padding:12px 18px;
+    margin:16px 0;
+}
+
+/* Contact */
+.contact{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    background:var(--tint);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 20px;
+    margin-top:6px;
+}
+.contact a{font-weight:600;word-break:break-all}
+
+.footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+    border-top:1px solid var(--border);
+    padding:22px 20px 26px;
+}
+
+/* Back to top */
+#toTop{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:var(--blue-dark);
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+
+@media(max-width:768px){
+.container{
+    margin:15px;
+}
+.header{padding:32px 24px}
+.header h1{font-size:30px}
+.pills{padding:16px 24px}
+.content{padding:8px 24px 28px}
+}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+#toTop{transition:none}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<div class="app">AadharPe EMI Loan Calculator</div>
+<h1>Privacy Policy</h1>
+<p>How information is collected, used, and protected when you use our application.</p>
+</div>
+
+<div class="pills">
+<span class="pill">Free to use</span>
+<span class="pill">Ad-supported</span>
+<span class="pill">Third-party services</span>
+<span class="pill">Not for children under 13</span>
+</div>
+
+<div class="content">
+
+<p>
+AadharPe EMI Loan Calculator is provided as a free, ad-supported application.
+This Service is provided at no cost and is intended for use as is.
+</p>
+
+<p>
+This Privacy Policy explains how information is collected, used, and protected
+when you use our application.
+</p>
+
+<p class="note">
+By using our Service, you agree to the collection and use of information in accordance with this Privacy Policy.
+</p>
+
+<h2><span class="ic">📝</span>Information Collection and Use</h2>
+
+<p>
+For a better experience while using our Service, we may request certain
+personally identifiable information. Any information collected is used only
+to improve the application and provide better services.
+</p>
+
+<p>
+The app also uses trusted third-party services that may collect information
+used to identify you.
+</p>
+
+<h2><span class="ic">🧩</span>Third-Party Services</h2>
+
+<ul class="links">
+<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+<li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google AdMob</a></li>
+<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+<li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+<li><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+</ul>
+
+<h2><span class="ic">📊</span>Log Data</h2>
+
+<p>
+Whenever you use our Service, if an error occurs in the application, we collect
+Log Data through third-party products.
+</p>
+
+<p>
+This information may include:
+</p>
+
+<ul class="chips">
+<li>Device IP Address</li>
+<li>Device Name</li>
+<li>Operating System Version</li>
+<li>App Configuration</li>
+<li>Time and Date of Usage</li>
+<li>Diagnostic Information</li>
+<li>Other Statistics</li>
+</ul>
+
+<h2><span class="ic">🍪</span>Cookies</h2>
+
+<p>
+This Service does not directly use cookies.
+However, third-party SDKs or libraries used by the app may use cookies or similar technologies
+to improve their services.
+</p>
+
+<p>
+You can choose to accept or refuse cookies through your device settings.
+</p>
+
+<h2><span class="ic">🤝</span>Service Providers</h2>
+
+<p>
+We may employ third-party companies and individuals to:
+</p>
+
+<ul>
+<li>Provide and maintain our Service</li>
+<li>Perform services on our behalf</li>
+<li>Analyze usage of our application</li>
+<li>Improve app performance and stability</li>
+</ul>
+
+<p>
+These third parties may have access to information required to perform their
+assigned tasks but are obligated not to disclose or use it for any other purpose.
+</p>
+
+<h2><span class="ic">🔒</span>Security</h2>
+
+<p>
+We value your trust in providing your information and strive to use
+commercially acceptable means to protect it.
+However, no method of electronic transmission or storage is 100% secure,
+and we cannot guarantee absolute security.
+</p>
+
+<h2><span class="ic">🌐</span>Links to Other Websites</h2>
+
+<p>
+Our application may contain links to external websites.
+If you click on a third-party link, you will be directed to that website.
+We strongly recommend reviewing the Privacy Policy of every website you visit.
+We have no control over external websites and assume no responsibility
+for their content or privacy practices.
+</p>
+
+<h2><span class="ic">🧒</span>Children's Privacy</h2>
+
+<p>
+Our Service does not knowingly collect personally identifiable information
+from children under the age of 13.
+</p>
+
+<p>
+If you believe that a child has provided us with personal information,
+please contact us immediately so we can remove such information.
+</p>
+
+<h2><span class="ic">🔄</span>Changes to This Privacy Policy</h2>
+
+<p>
+We may update this Privacy Policy from time to time.
+Any changes will be posted on this page with an updated revision date.
+</p>
+
+<h2><span class="ic">✉️</span>Contact Us</h2>
+
+<p>
+If you have any questions, suggestions, or concerns regarding this Privacy Policy,
+please contact us at:
+</p>
+
+<div class="contact">
+<strong>Email:</strong>
+<a href="mailto:pramukhappsstudio02@gmail.com">aniketpatoliya01@gmail.com</a>
+</div>
+
+</div>
+
+<div class="footer">
+
+© 2026 AadharPe EMI Loan Calculator<br>
+All Rights Reserved.
+
+</div>
+
+</div>
+
+<button id="toTop" type="button" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+    var btn = document.getElementById('toTop');
+    window.addEventListener('scroll', function(){
+        btn.classList.toggle('show', window.scrollY > 500);
+    }, {passive:true});
+    btn.addEventListener('click', function(){
+        window.scrollTo({top:0});
+    });
+})();
+</script>
+
+</body>
+</html>
